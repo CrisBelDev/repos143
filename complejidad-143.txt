@@ -1,5 +1,9 @@
 package holamundo;
 
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.TreeSet;
+
 public class holamundo {
 	public static int metodo1(int a ,int b) { //1
 		int s =0;								// 1
@@ -48,20 +52,83 @@ public class holamundo {
 		return min; //1
 		// 									-------------
 		//									t(n) = 3n+1 --> entonces -->pertenece O(n)	
-	}
-	public static void main(String args[]){
 		
+	}
+	// factorial --> O(n)
+	// dado un vector determinar la cantidad de numeros impares
+	
+	public static int obt_Impar(int v[] ) {		//1
+		/*
+		 *  toda declaracion no debe ser tomada en cuenta para calcular los tiempos de ejecucacion:
+		 *  int a; // se esta declarando la variable no tomamos en cuenta
+		 *  a = 5; // 1
+		 *  
+		 * */
+		int cantidad = 0;						// 1
+		
+		for (int i =0;i<v.length;i++) {			// n
+			if(v [i] % 2 == 1 ) {				//n-1
+				cantidad++;						//n-1
+			}
+		}
+		return cantidad; 						// 1
+		// 									-------------
+		//									t(n) = 3n+1 --> entonces -->pertenece O(n)	
+		
+	}
+	
+	// leer n numeros e imprimir los pares de manera ascendente
+	public static TreeSet numeros_ascendetes(int n) {	// 1
+		TreeSet<Integer> tset = new TreeSet<Integer>(); 
+		Scanner leer = new Scanner(System.in);			
+		for(int i = 1; i<=n;i++) {						// n+1
+			int x = leer.nextInt();						// n
+			if(x%2==0) {								// n
+				tset.add(x);							// n 
+			}
+		}
+		return tset;									// 1
+		// 										----------------
+		//											t(n) = 3n +3 = 3(n+1) ---> O(n)
+	}
+	
+	public static void imppares(int v[]) {	// 1
+		Arrays.sort(v);						// n*log(n)
+		int n = v.length;					// 1
+		for(int i = 0;i<n;i++) {			// n+1
+			if(v[i] %2 == 0) {				// n
+				System.out.print(v[i] +" ");// n
+			}
+		}
+										
+		// 								----------------
+		//						t(n) = n*log(n) +3n + 3  ---> complejidad es: O(n log n)  
+	}
+	public static void seleccion(int v[]) { //1
+		int n = v.length;					//1
+		int x ;
+		for(int i =0;i<n-1;i++) {			//
+			for(int j = i+1;j<n;j++) {
+				if(v[i] > v[j]) {
+					x = v[i];
+					v[i] = v[j];
+					v[j] = x;
+				}
+			}
+		}
+	}
+	
+	public static void main(String args[]){
+			
 			metodo2(3, 6);
 			System.out.println(metodo3(3, 6));
+			int v[] = {1,2,3,4,5,6,7,8,9,10,12,15,25};
+			System.out.println(obt_Impar(v));
+			//------------------------------
+			//System.out.println(numeros_ascendetes(5));
+			System.out.println("--------------------------");
+			imppares(v);
 		}
-	// 3 +4 +5 +6
-	/*
-		a	b	s	i	salida
-		3	6	0	(3)		18
-				3	(4)
-				7	(5)
-				12	(6)
-				18	7
-	 
-	*/
+
 }
+
