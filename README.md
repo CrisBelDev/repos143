@@ -1,2 +1,2 @@
 # repos143
-# Blog de apuntus INF-143
+# Blog de apuntes INF-143
