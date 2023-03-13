@@ -1,0 +1,15 @@
+// tarea mensionar 3 ejemplos con las siguientes caracteristicas
+	/*
+	 * tiene 3 caracteristicas
+	 * 	1. 
+	 * 	2. 
+	 * 	3. 
+	 * --------
+	 * v = 9,5,30,4,2,1,15,21
+	 *  si elem = 9 --> tiempo = 1 (mejor de los casos)				Omega 		Ω(1)
+	 *  si elem = 21 --> tiempo = 8 (peor de los casos)				Omicron 	O(n)
+	 *  si elem = 50 --> tiempo = 8 (peor de los casos)		
+	 *  si elem = 5 --> tiempo = 2 (caso promedio)					Theta 		θ(n)
+	 *  si elem = 1 --> tiempo = 6 (caso promedio)					
+	 *  
+	 * */
