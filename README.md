@@ -9,4 +9,4 @@ http://lwh.free.fr/pages/algo/tri/tri_selection_es.html
 
 burbuja O(n2)
 
-bitSort O(n)
+bitSort O(n)  --- libro jorge teran
