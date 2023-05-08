@@ -1,0 +1,36 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import java.util.TreeMap;
+
+public class tarea {
+	public static void main(String[] args) throws FileNotFoundException{
+		File f= new File("ejemploHashMap.java");
+		Scanner leer;
+		TreeMap<String, Integer> mapa = new TreeMap<String,Integer>(); 
+		mapa.put("if", 0);
+		mapa.put("int", 0);
+		mapa.put("else",0);
+		mapa.put("for",0);
+		mapa.put("new",0);
+		mapa.put("while",0);
+		mapa.put("public",0);
+		mapa.put("void",0);
+		
+		leer = new Scanner(f);
+		
+		while(leer.hasNext()) {
+			String x = leer.next();
+
+			
+				if(mapa.containsKey(x)) {
+					mapa.put(x, mapa.get(x) + 1);
+				}
+		
+		}
+		
+		System.out.println(mapa);
+		
+	}
+}
